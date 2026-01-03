@@ -1,0 +1,7 @@
+{
+    "webhook_url": "https://hooks.slack.com/services/YOUR/WEBHOOK/URL",
+    "channel": "#js-monitor-alerts",
+    "username": "JS File Monitor",
+    "icon_emoji": ":file_folder:",
+    "alert_threshold": "MEDIUM"
+}

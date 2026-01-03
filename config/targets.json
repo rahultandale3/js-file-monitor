@@ -1,0 +1,11 @@
+{
+    "domains": [
+        "heckerone.com",
+        "tesla.com",
+        "apple.com"
+    ],
+    "scan_frequency_minutes": 1440,
+    "max_pages_per_domain": 20,
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "rate_limit_delay_seconds": 2
+}

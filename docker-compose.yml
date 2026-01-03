@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./storage:/storage
+      - ./logs:/logs
+      - ./config:/app/config
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
+    command: python api/app.py
+
+  monitor:
+    build: .
+    volumes:
+      - ./storage:/storage
+      - ./logs:/logs
+      - ./config:/app/config
+      - ./scripts:/app/scripts
+    depends_on:
+      - api
+    restart: unless-stopped
+    command: >
+      bash -c "echo '0 */6 * * * /app/scripts/fetch_js_files.sh >> /logs/cron.log 2>&1' 
+      | crontab - && cron -f"

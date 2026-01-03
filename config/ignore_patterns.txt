@@ -1,0 +1,9 @@
+*.min.js
+*-min.js
+*.bundle.js
+vendor/*
+node_modules/*
+jquery
+bootstrap
+fontawesome
+google-analytics
